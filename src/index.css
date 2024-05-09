@@ -55,9 +55,13 @@ body {
   background-color: var(--color-background-500);
   border-radius: 0.9rem;
   position: relative;
-  overflow: hidden;
+  overflow-y: scroll; /* Enable vertical scrolling */
+  overflow-x: hidden; /* Hide horizontal scrollbar if any */
 }
-
+.box::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
 .loader {
   text-align: center;
   text-transform: uppercase;
