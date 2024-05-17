@@ -50,7 +50,7 @@ export default function App() {
         setIsLoading(true);
         setError("");
         const response = await fetch(
-          `http://www.omdbapi.com/?i=tt3896198&apikey=${KEY}=${query
+          `http://www.omdbapi.com/?i=tt3896198&apikey=d0ec1fff&s=${query
             .replaceAll(" ", `%20`)
             .trim()}`,
           { signal: controller.signal }
