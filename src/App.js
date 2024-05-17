@@ -83,7 +83,7 @@ export default function App() {
     handleCloseMovie();
     fetching();
 
-    return () => controller.abort();
+    // return () => controller.abort();
   }, [query]);
 
   return (
