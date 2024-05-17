@@ -6,17 +6,18 @@ const ratingContainerStyle = {
   alignItems: "center",
 };
 
-const starContainerStyle = { display: "flex", gap: "5px" };
+const starContainerStyle = { display: "flex", gap: "2px" };
 
 export default function StartRating({
   maxLength = 5,
   color = "#fcc419",
   size = "32",
-  pWeight = "700",
-  font = "Ariel",
+  pWeight = "900",
+  font = "Roboto",
   onSetRating,
+  starRating = 0,
 }) {
-  const [rating, setRating] = useState(0);
+  const [rating, setRating] = useState(starRating);
   const [tempRating, setTempRating] = useState(0);
 
   const handleTempRating = (val) => {
@@ -29,7 +30,7 @@ export default function StartRating({
   const ratingParagraphStyle = {
     margin: "0",
     padding: "0",
-    fontSize: `${size / 1.2}px`,
+    fontSize: `${size / 1.4}px`,
     fontWeight: `${pWeight}px`,
     fontFamily: font,
     color,

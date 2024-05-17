@@ -47,6 +47,7 @@ body {
   display: flex;
   gap: 2.4rem;
   justify-content: center;
+  position: relative;
 }
 
 .box {
@@ -347,12 +348,23 @@ body {
   align-items: center;
   justify-content: center;
 }
+.btn-wishlist {
+  position: fixed;
+  bottom: 5rem;
+  padding: 1.5rem 3rem;
+  font-weight: 900;
+  font-size: 1.8rem;
+  background-color: rgb(255, 123, 0);
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.8);
+  cursor: pointer;
+  text-transform: uppercase;
+  display: none;
+}
 @media only screen and (max-width: 768px) {
-  .box:last-child {
-    /* transform: scaleX(0); */
-    position: absolute;
-  }
-  .box:first-child button {
+  div.box:nth-of-type(2) {
+    /* Your styles here */
     display: none;
   }
   .nav-bar {
@@ -364,4 +376,12 @@ body {
   .num-results {
     justify-self: center;
   }
+  .btn-wishlist {
+    display: block;
+  }
+}
+
+.summary span {
+  text-wrap: nowrap;
+  /* display: none; */
 }
