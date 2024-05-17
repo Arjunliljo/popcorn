@@ -50,7 +50,7 @@ export default function App() {
         setIsLoading(true);
         setError("");
         const response = await fetch(
-          `http://www.omdbapi.com/?i=tt3896198&apikey=d0ec1fff&s=${query
+          `https://www.omdbapi.com/?i=tt3896198&apikey=d0ec1fff&s=${query
             .replaceAll(" ", `%20`)
             .trim()}`,
           { signal: controller.signal }
@@ -83,8 +83,7 @@ export default function App() {
     handleCloseMovie();
     fetching();
 
-    //
-    // return () => controller.abort();
+    return () => controller.abort();
   }, [query]);
 
   return (
@@ -263,7 +262,7 @@ function MovieDetails({
     const getMovieDetails = async () => {
       setIsLoading(true);
       const response = await fetch(
-        `http://www.omdbapi.com/?i=${selectedId}&apikey=${KEY}`
+        `https://www.omdbapi.com/?i=${selectedId}&apikey=${KEY}`
       );
       const data = await response.json();
       setMovieDetails(data);
