@@ -141,6 +141,7 @@ export default function App() {
                 onSetWatchedMovie={setWatched}
                 watched={watched}
                 key={selectedId}
+                isMobile={isMobile}
               />
             ) : (
               <>
@@ -244,6 +245,7 @@ function MovieDetails({
   onCloseMovie,
   onSetWatchedMovie,
   watched,
+  isMobile,
 }) {
   const [movie, setMovieDetails] = useState({});
   const [isLoading, setIsLoading] = useState(false);
@@ -323,8 +325,8 @@ function MovieDetails({
             <div className="rating">
               {!isExist && (
                 <StarRating
-                  maxLength={10}
-                  size="24"
+                  maxLength="10"
+                  size={isMobile ? "20" : "24"}
                   onSetRating={setUserRating}
                 />
               )}
