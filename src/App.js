@@ -39,6 +39,7 @@ export default function App() {
 
   useEffect(() => {
     window.addEventListener("resize", handleResize);
+    return window.removeEventListener("resize", handleResize);
   }, []);
 
   useEffect(() => {
