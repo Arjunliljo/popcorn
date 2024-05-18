@@ -117,7 +117,11 @@ export default function App() {
               ) : (
                 <>
                   <WatchedSummery watched={watched} />
-                  <WatchedList watched={watched} handleRemove={handleRemove} />
+                  <WatchedList
+                    watched={watched}
+                    handleRemove={handleRemove}
+                    movieSelect={handleMovieSelect}
+                  />
                 </>
               )}
             </Box>
@@ -146,7 +150,11 @@ export default function App() {
             ) : (
               <>
                 <WatchedSummery watched={watched} />
-                <WatchedList watched={watched} handleRemove={handleRemove} />
+                <WatchedList
+                  watched={watched}
+                  handleRemove={handleRemove}
+                  movieSelect={handleMovieSelect}
+                />
               </>
             )}
           </Box>
@@ -385,7 +393,7 @@ function WatchedSummery({ watched }) {
   );
 }
 
-function WatchedList({ watched, handleRemove }) {
+function WatchedList({ watched, handleRemove, movieSelect }) {
   if (!watched) return;
   return (
     <ul className="list">
@@ -394,14 +402,15 @@ function WatchedList({ watched, handleRemove }) {
           movie={movie}
           key={movie.imdbID}
           handleRemove={handleRemove}
+          movieSelect={movieSelect}
         />
       ))}
     </ul>
   );
 }
-function WatchedMovie({ movie, handleRemove }) {
+function WatchedMovie({ movie, handleRemove, movieSelect }) {
   return (
-    <li>
+    <li onClick={() => movieSelect(movie.imdbID)}>
       <img src={movie.Poster} alt={`${movie.Title} poster`} />
       <h3>{movie.Title}</h3>
       <div>
