@@ -29,18 +29,18 @@ export default function App() {
   const handleWishListBtn = () => {
     setIsWishlist((isWishlist) => !isWishlist);
   };
-  const handleResize = () => {
-    setIsMobile(window.innerWidth <= 768);
-    setIsWishlist(!(window.innerWidth <= 768));
-  };
+  // const handleResize = () => {
+  //   setIsMobile(window.innerWidth <= 768);
+  //   setIsWishlist(!(window.innerWidth <= 768));
+  // };
   const handleRemove = (id) => {
     setWatched((watched) => watched.filter((movie) => movie.imdbID !== id));
   };
 
-  useEffect(() => {
-    window.addEventListener("resize", handleResize);
-    return window.removeEventListener("resize", handleResize);
-  }, []);
+  // useEffect(() => {
+  //   window.addEventListener("resize", handleResize);
+  //   return window.removeEventListener("resize", handleResize);
+  // }, []);
 
   useEffect(() => {
     const controller = new AbortController();
