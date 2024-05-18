@@ -80,7 +80,7 @@ export default function App() {
       setMovies([]);
       return;
     }
-    handleCloseMovie();
+
     fetching();
 
     return () => controller.abort();
