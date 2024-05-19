@@ -297,6 +297,8 @@ body {
   margin-bottom: 0.8rem;
   font-weight: 600;
   display: flex;
+  align-items: center;
+  justify-content: center;
   flex-direction: column;
   gap: 2.4rem;
 }

@@ -7,7 +7,7 @@ const average = (arr) =>
 const KEY = "d0ec1fff&s";
 
 export default function App() {
-  const [query, setQuery] = useState("inception");
+  const [query, setQuery] = useState("");
   const [movies, setMovies] = useState([]);
   const [watched, setWatched] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -44,7 +44,7 @@ export default function App() {
 
   useEffect(() => {
     const controller = new AbortController();
-
+    document.querySelector(".search").focus();
     async function fetching() {
       let currError = "An Unkown Error Ocuured";
       try {
@@ -335,7 +335,7 @@ function MovieDetails({
               {!isExist && (
                 <StarRating
                   maxLength="10"
-                  size={isMobile ? "20" : "24"}
+                  size={isMobile ? "16" : "24"}
                   onSetRating={setUserRating}
                 />
               )}
