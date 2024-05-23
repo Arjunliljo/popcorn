@@ -11,7 +11,7 @@ export default function App() {
   const [movies, setMovies] = useState([]);
   const [watched, setWatched] = useState(() => {
     const oldWatched = localStorage.getItem("watched");
-    return JSON.parse(oldWatched);
+    return oldWatched ? JSON.parse(oldWatched) : [];
   });
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
@@ -393,8 +393,8 @@ function MovieDetails({
 }
 
 function WatchedSummery({ watched }) {
-  const avgImdbRating = average(watched.map((movie) => movie.imdbRating));
-  const avgUserRating = average(watched.map((movie) => movie.userRating));
+  const avgImdbRating = average(watched?.map((movie) => movie?.imdbRating));
+  const avgUserRating = average(watched?.map((movie) => movie?.userRating));
   const avgRuntime = average(
     watched.map((movie) => Number(movie?.Runtime?.split(" ")?.at(0)))
   );
