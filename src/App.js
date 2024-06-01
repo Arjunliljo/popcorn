@@ -4,6 +4,7 @@ import { useMovies } from "./useMovies";
 import { useLocalStorage } from "./useLocalStorage";
 import { useKey } from "./useKey";
 
+
 const KEY = "d0ec1fff&s";
 
 const average = (arr) =>
