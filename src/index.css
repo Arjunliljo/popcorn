@@ -26,6 +26,7 @@ body {
 
   color: var(--color-text);
   background-color: var(--color-background-900);
+
   padding: 2.4rem;
 }
 
@@ -101,7 +102,7 @@ body {
   padding: 1.1rem 1.6rem;
   font-size: 1.8rem;
   border-radius: 0.7rem;
-  width: 40rem;
+  width: 100%;
   transition: all 0.3s;
   color: var(--color-text);
 
@@ -297,6 +298,8 @@ body {
   margin-bottom: 0.8rem;
   font-weight: 600;
   display: flex;
+  align-items: center;
+  justify-content: center;
   flex-direction: column;
   gap: 2.4rem;
 }
